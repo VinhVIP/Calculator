@@ -99,8 +99,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     private fun execute(op: String) {
         if (tvOperator.text.isEmpty()) {
             if (tvY.text.isEmpty()) {
-                if (op != "=") tvOperator.text = op
-            } else {
+                if (tvX.text.isNotEmpty() && op != "=") tvOperator.text = op
+            } else if (op != "=") {
                 tvX.text = tvY.text
                 tvOperator.text = op
                 tvY.text = ""
